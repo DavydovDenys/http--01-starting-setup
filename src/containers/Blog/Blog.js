@@ -16,7 +16,7 @@ class Blog extends Component {
     // const axios = require('axios');
     axios.get('https://jsonplaceholder.typicode.com/posts')
       .then(response => {
-        console.log(response);
+        // console.log(response);
         const posts = response.data.slice(0, 4);
         const updatedPost = posts.map(post => {
           return {
