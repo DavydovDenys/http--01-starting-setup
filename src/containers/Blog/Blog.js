@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Route} from 'react-router-dom';
+import {Route, Link} from 'react-router-dom';
 
 import NewPost from "./NewPost/NewPost";
 import Posts from '../Blog/Posts/Posts'
@@ -13,8 +13,12 @@ class Blog extends Component {
       <div className="Blog">
         <header>
           <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/new-post">New Post</a></li>
+            <li><Link to={{
+              pathname: '/',
+              has: '#submit',
+              search: '?quick-submit=true'
+            }}>Home</Link></li>
+            <li><Link to='/new-post'>New Post</Link></li>
           </ul>
         </header>
         {/*<Posts/>*/}
