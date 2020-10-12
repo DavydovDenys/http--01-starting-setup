@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Route} from 'react-router-dom';
 
+import NewPost from "./NewPost/NewPost";
 import Posts from '../Blog/Posts/Posts'
 import './Blog.module.css';
 
@@ -17,8 +18,8 @@ class Blog extends Component {
           </ul>
         </header>
         {/*<Posts/>*/}
-        <Route path="/" exact render={() => <h1>Home</h1>}/>
-        <Route path="/new-post" exact render={() => <h1>New Post</h1>}/>
+        <Route path="/" exact component={Posts}/>
+        <Route path="/new-post" component={NewPost}/>
       </div>
     );
   }
