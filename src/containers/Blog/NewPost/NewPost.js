@@ -11,7 +11,7 @@ class NewPost extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props);
+
   }
 
   postDataHandler = () => {
@@ -21,9 +21,7 @@ class NewPost extends Component {
       author: this.state.author
     };
     axios.post('/posts', post)
-      .then(response => {
-        console.log(response);
-      });
+      .then(response => response);
   }
 
   render() {
