@@ -12,7 +12,8 @@ class NewPost extends Component {
     submitted: false,
   }
   componentDidMount() {
-
+    // проверка на авторизацию пользователя
+    // if unauth => this.props.history.replace('/posts')
   }
 
   postDataHandler = () => {
@@ -22,7 +23,11 @@ class NewPost extends Component {
       author: this.state.author
     };
     axios.post('/posts', post)
-      .then(response => this.setState({submitted: true}));
+      .then(response =>
+        // this.setState({submitted: true})
+        // this.props.history.push('/posts')
+        this.props.history.replace('/posts')
+      );
   }
 
   render() {
